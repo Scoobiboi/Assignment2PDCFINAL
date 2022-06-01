@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jun 02 10:17:32 NZST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-2158-6e89-000006dd2808 
+on database directory /home/lukey/Music/PDC_Assignment_2/GameDBChopChop with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 
+Loaded from file:/home/lukey/Desktop/PDC_Assignment_2/lib/derby.jar
+java.vendor=Private Build
+java.runtime.version=11.0.15+10-Ubuntu-0ubuntu0.22.04.1
+user.dir=/home/lukey/Music/PDC_Assignment_2
+os.name=Linux
+os.arch=amd64
+os.version=5.15.0-27-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
