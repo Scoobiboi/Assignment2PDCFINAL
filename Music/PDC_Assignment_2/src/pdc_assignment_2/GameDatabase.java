@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pdc_assignment_2;
 
 import java.sql.Connection;
@@ -22,21 +18,21 @@ public class GameDatabase {
     String url = "jdbc:derby:GameDBChopChop;create=true";
     String dbusername = "pdc";
     String dbpassword = "pdc";
-    String rules = "rules goes here";
+    String rules = "Please";
 
     public void dbsetup(){
         try{
             conn = DriverManager.getConnection(url, dbusername, dbpassword);
             Statement statement = conn.createStatement();
             String tableName = "GameProfile";
-            
+            String tableName2 = "Game Rules ";
             if(!checkTableExisting(tableName)){
                 //We created a table to store out players stats.
                 statement.executeUpdate("CREATE TABLE " + tableName + " (username VARCHAR(12), password VARCHAR(12), hpMulti INT, dmgMulti INT, luckMulti INT, multiPoints INT)");
             }
             statement.close();
         } catch (Throwable e) {
-            System.out.println("??");
+            System.out.println("Error -Please ensure Derby Jars are in Libraries.");
         }
     }
 
@@ -68,6 +64,7 @@ public class GameDatabase {
         }
         return data;
     }
+            
 
     private boolean checkTableExisting(String newTableName){
         boolean flag = false;
@@ -78,7 +75,7 @@ public class GameDatabase {
             while (rsDBMeta.next()) {
                 String tableName = rsDBMeta.getString("TABLE_NAME");
                 if (tableName.compareToIgnoreCase(newTableName) == 0) {
-                    System.out.println(tableName + "  is there");
+                    System.out.println(tableName + " exists in your Database");
                     flag = true;
                 }
             }
@@ -90,6 +87,8 @@ public class GameDatabase {
         return flag;
     }
 
+    
+    // Saving the user namne and stat multiplier. If the multiplier points are unused throughout the game then they are stored in the database for next use upon login.
     public void saveDB(int hpMulti, int dmgMulti, int luckMulti, String username, int multiPoints){
         Statement statement;
         try{
