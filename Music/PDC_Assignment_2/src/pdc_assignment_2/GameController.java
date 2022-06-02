@@ -135,6 +135,7 @@ public class GameController implements ActionListener {
                     String userInput = this.view.addMultiAmountField.getText();
                     this.model.addLuckMulti(Integer.parseInt(userInput));
                 } catch(java.lang.NumberFormatException E){
+                   
                     System.out.println("Input a number please...");
                 }
                 view.updateMultiPoint(model.data.multiPoints, model.data.hpMulti, model.data.dmgMulti, model.data.luckMulti);
