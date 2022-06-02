@@ -21,7 +21,7 @@ public GameData(){
     //counter
     int multiPoints = 0;
     int statPoints = 0;
-    
+        
     //initialise player damage to 0 when the game starts 
     Player player = new Player();
     int playerHp = player.getHp();
