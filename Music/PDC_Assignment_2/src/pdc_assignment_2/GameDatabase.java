@@ -13,19 +13,18 @@ import java.util.logging.Logger;
  *
  * @author pycun
  */
+// Connection to the Database via Embedded route.
 public class GameDatabase {
     Connection conn = null;
     String url = "jdbc:derby:GameDBChopChop;create=true";
     String dbusername = "pdc";
     String dbpassword = "pdc";
-    String rules = "Please";
 
     public void dbsetup(){
         try{
             conn = DriverManager.getConnection(url, dbusername, dbpassword);
             Statement statement = conn.createStatement();
             String tableName = "GameProfile";
-            String tableName2 = "Game Rules ";
             if(!checkTableExisting(tableName)){
                 //We created a table to store out players stats.
                 statement.executeUpdate("CREATE TABLE " + tableName + " (username VARCHAR(12), password VARCHAR(12), hpMulti INT, dmgMulti INT, luckMulti INT, multiPoints INT)");
