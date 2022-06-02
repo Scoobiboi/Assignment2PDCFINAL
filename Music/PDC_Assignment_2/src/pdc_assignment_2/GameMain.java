@@ -4,6 +4,7 @@
  */
 package pdc_assignment_2;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 
 /**
@@ -17,6 +18,7 @@ public class GameMain {
         GameData data = new GameData();
         
         JFrame frame = new JFrame("Chop Chop");
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(view);
         frame.pack();
