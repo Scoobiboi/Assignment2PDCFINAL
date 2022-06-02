@@ -22,11 +22,13 @@ public GameData(){
     int multiPoints = 0;
     int statPoints = 0;
     
+    //initialise player damage to 0 when the game starts 
     Player player = new Player();
     int playerHp = player.getHp();
     int playerDmg = player.getDmg();
     int playerLuck = player.getLuck();
     
+    //setting up the data for monster to initialise to 0 when game starts.
     Monster monster = new Monster();
     int monsterHp = monster.getHp();
     int monsterDmg = monster.getDmg();
