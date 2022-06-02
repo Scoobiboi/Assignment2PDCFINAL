@@ -5,6 +5,7 @@
 package pdc_assignment_2;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -144,6 +145,7 @@ public class GameView extends JPanel implements Observer{
         buttonArea.add(playButton);
         buttonArea.add(multiplierScreenButton);
         buttonArea.add(gameRulesScreenButton);
+        buttonArea.setBackground(Color.BLACK);
         
         super.removeAll();
         super.add(buttonArea, BorderLayout.CENTER);
@@ -158,7 +160,7 @@ public class GameView extends JPanel implements Observer{
         
         rulesScreenPanel.add(rulesDisplayLabel);
         buttonArea.add(backButton);
-        
+        buttonArea.setBackground(Color.BLACK);
         super.removeAll();
         super.add(buttonArea, BorderLayout.SOUTH);
         super.add(rulesScreenPanel, BorderLayout.CENTER);
@@ -173,6 +175,7 @@ public class GameView extends JPanel implements Observer{
         
         multiplierScreenPanel.add(multiplierDisplayLabel);
         buttonArea.add(backButton);
+        buttonArea.setBackground(Color.BLACK);
         
         super.removeAll();
         super.add(buttonArea, BorderLayout.SOUTH);
@@ -201,12 +204,13 @@ public class GameView extends JPanel implements Observer{
         buttonArea.add(addHpButton);
         buttonArea.add(addDmgButton);
         buttonArea.add(addLuckButton);
-        
+        buttonArea.setBackground(Color.BLACK);
         super.removeAll();
         super.add(statPointsAmount, BorderLayout.NORTH);
         super.add(playerStatPoint, BorderLayout.CENTER);
         super.add(buttonArea, BorderLayout.SOUTH);
         super.revalidate();
+        super.setBackground(Color.BLACK);
         super.repaint();
     }
     
@@ -230,7 +234,7 @@ public class GameView extends JPanel implements Observer{
         buttonArea.add(addHpMultiButton);
         buttonArea.add(addDmgMultiButton);
         buttonArea.add(addLuckMultiButton);
-        
+        buttonArea.setBackground(Color.BLACK);
         super.removeAll();
         super.add(multiPointsAmount, BorderLayout.NORTH);
         super.add(playerMultiPoint, BorderLayout.CENTER);
@@ -257,7 +261,9 @@ public class GameView extends JPanel implements Observer{
         battleScreenNumber.add(fightNumberLabel);
         buttonArea.add(battleButton);
         buttonArea.add(allocateStatButton);
+        buttonArea.setBackground(Color.BLACK);
         
+        super.setBackground(Color.BLACK);
         super.removeAll();
         super.add(battleScreenNumber, BorderLayout.NORTH);
         super.add(battleScreen, BorderLayout.CENTER);
@@ -271,9 +277,10 @@ public class GameView extends JPanel implements Observer{
         JPanel gameOverPanel = new JPanel();
         JPanel buttonPanel = new JPanel();
         
-        JLabel gameOverMessage = new JLabel("GAME OVER, U DIED!!!");
-        
+        JLabel gameOverMessage = new JLabel("Game Over ! Better luck next time !");
+        gameOverPanel.setBackground(Color.BLACK);
         buttonPanel.add(toMultiMenuButton);
+        buttonPanel.setBackground(Color.BLACK);
         gameOverPanel.add(gameOverMessage);
         super.removeAll();
         super.add(gameOverPanel, BorderLayout.CENTER);
@@ -347,5 +354,10 @@ public class GameView extends JPanel implements Observer{
         if(data.loginFlag){
             this.mainMenuScreen();
         }
+        // instance new flags for things. 
+        
+        
+        
+        
     }
 }
